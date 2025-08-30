@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
+import { SupabaseService } from './supabase';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,13 @@ import { Component, signal } from '@angular/core';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('niver');
+   images: any[] = [];
+
+  constructor(private supabaseService: SupabaseService) {}
+
+  async ngOnInit() {
+    this.images = await this.supabaseService.getImages();
+  }
 }
