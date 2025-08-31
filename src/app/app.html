@@ -7,7 +7,11 @@
         [class.active]="i === 0"
       >
         <img [src]="img.url" class="d-block w-100" [alt]="img.name">
+        <div class="overlay-text">
+          {{ img.text }}
+        </div>
       </div>
+
     </div>
     
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -20,9 +24,6 @@
       <span class="visually-hidden">Next</span>
     </button>
     
-    <!-- Texto sobreposto -->
-    <div class="overlay-text">
-      Feliz 15 anos, Maria Júlia!
-    </div>
+
   </div>
 </div>
